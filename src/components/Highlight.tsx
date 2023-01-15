@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-const Highlight: FC<{ title: any; search?: string; description?: boolean }> = ({
+const Highlight: FC<{ title: string; search?: string; description?: boolean }> = ({
   title,
   search,
   description,
@@ -17,7 +17,7 @@ const Highlight: FC<{ title: any; search?: string; description?: boolean }> = ({
 
   return (
     <span>
-      {parts.map((part: any, i: number) =>
+      {parts.map((part: string, i: number) =>
         regex.test(part) ? (
           <mark className={description ? 'summary' : 'title'} key={i}>
             {part}

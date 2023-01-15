@@ -12,7 +12,7 @@ export const spcFlightApi = createApi({
         url: `articles`,
       }),
     }),
-    getArticle: build.query<any, string>({
+    getArticle: build.query<IArticle, string>({
       query: (id) => ({
         url: `articles/${id}`,
       }),

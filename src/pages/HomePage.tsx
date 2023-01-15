@@ -1,4 +1,4 @@
-import { IArticle } from '../models/models';
+import { IArticle, IPriority } from '../models/models';
 import { useArticlesQuery } from '../store/spaceflight/spaceflight.api';
 import {
   Container,
@@ -14,7 +14,7 @@ import ArticleCard from '../components/ArticleCard';
 const HomePage = () => {
   const [search, setSearch] = useState('');
   const { isLoading, isError, data } = useArticlesQuery();
-  const p: any = [];
+  const priorities: IPriority[] = [];
 
   function countInstances(string: string, word: string) {
     return string.split(word).length - 1;
@@ -35,18 +35,21 @@ const HomePage = () => {
         article.title.toLowerCase(),
         search.toLowerCase(),
       );
-      p.push({ priority, article: article.id });
+      priorities.push({ priority, article: article.id });
       return article;
     }
   });
-  p.sort(function (a: any, b: any) {
+
+  // get sorted priorities by amount of highlighted words in title
+  priorities.sort(function (a: IPriority, b: IPriority) {
     return b.priority - a.priority;
   });
 
+  // match sorted articles with actual data
   filteredData?.sort((a, b) => {
     return (
-      p.findIndex((p: any) => p.article === a.id) -
-      p.findIndex((p: any) => p.article === b.id)
+      priorities.findIndex((p: IPriority) => p.article === a.id) -
+      priorities.findIndex((p: IPriority) => p.article === b.id)
     );
   });
 

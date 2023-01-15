@@ -37,16 +37,13 @@ const ArticleCard: FC<PropsType> = ({ article, search }) => {
               {article?.formattedDate}
             </Typography>
             <Highlight title={article?.title} search={search} />
-            <div>
+            <Box sx={{pt:3}}>
               <Highlight
                 title={article?.summary.substring(0, 100)}
                 search={search}
                 description={true}
               />
-            </div>
-            {/*<Typography key={article.id} sx={{ minHeight:'72px', fontWeight:'400'}}>*/}
-            {/*    {article?.summary.substring(0,100)}*/}
-            {/*</Typography>*/}
+            </Box>
           </Box>
           <Link
             to={`/article/${article.id}`}

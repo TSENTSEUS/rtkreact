@@ -42,7 +42,6 @@ const Detail = () => {
           <Typography
             sx={{ fontSize: 22, textAlign: 'center', fontWeight: '700', pb: 3 }}
           >
-            {' '}
             {article?.title}
           </Typography>
           <Typography>{article?.summary}</Typography>

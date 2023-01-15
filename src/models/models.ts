@@ -17,3 +17,8 @@ export interface IArticle {
   events: any[];
   formattedDate?: string;
 }
+
+export interface IPriority {
+  priority: number,
+  article: number,
+}
