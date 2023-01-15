@@ -1,0 +1,17 @@
+$font-stack: Roboto, sans-serif;
+$w600: 600;
+$w400: 400;
+$fs20: 20;
+.title {
+  font-family: $font-stack;
+  font-weight: $w600;
+  font-size: $fs20;
+  line-height: 1;
+}
+
+.summary {
+  font-family: $font-stack;
+  font-weight: $w400;
+  line-height: 1;
+  font-size: $fs20;
+}
