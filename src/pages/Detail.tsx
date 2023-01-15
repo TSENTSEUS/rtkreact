@@ -20,6 +20,7 @@ const Detail = () => {
         sx={{
           width: '100%',
           height: 200,
+          top:70,
           objectFit: 'cover',
           position: 'absolute',
           zIndex: -1,

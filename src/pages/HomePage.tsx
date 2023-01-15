@@ -61,7 +61,6 @@ const HomePage = () => {
       <TextField
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        id="outlined-basic"
         label="Search"
         variant="outlined"
         sx={{ maxWidth: '400px', width: '100%' }}
@@ -73,7 +72,7 @@ const HomePage = () => {
           ),
         }}
       />
-      <Typography sx={{ pt: 3 }}>Result: {filteredData?.length}</Typography>
+      <Typography sx={{ pt: 3, fontWeight:'500' }}>Result: {filteredData?.length}</Typography>
       {isLoading ? (
         <LinearProgress sx={{ mt: 2 }} />
       ) : (
